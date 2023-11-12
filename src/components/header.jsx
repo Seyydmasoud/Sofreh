@@ -1,3 +1,5 @@
+'use client';
+
 import { Disclosure } from "@headlessui/react";
 import { PhoneIcon, MapIcon } from "@heroicons/react/24/outline";
 

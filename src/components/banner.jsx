@@ -1,9 +1,12 @@
-export default function Banner({ business }) {
+import Image from "next/image"
+import Background from "../assets/images/background.jpg";
+
+export default function Banner() {
   return (
     <div className="relative bg-gray-800 py-16 px-6 sm:py-20 sm:px-12 lg:px-16">
       <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={business.banners[0].image}
+        <Image
+          src={Background}
           alt=""
           className="w-full h-full object-center object-cover"
         />
