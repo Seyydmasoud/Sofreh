@@ -3,7 +3,7 @@
 
 ## Overview
 
-Briefly describe backend and its purpose.
+A brief description of backend and its purpose.
 
 ## OpenAPI Schema
 
