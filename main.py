@@ -1,6 +1,6 @@
-from models import *
 from fastapi import FastAPI
-from database import *
+from database import get_categories, get_menu_items
+from models import Category
 
 app = FastAPI()
 
@@ -39,5 +39,5 @@ async def get_menu_endpoint():
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:app", reload=True, app_dir="./backend-dir",
+    uvicorn.run("main:app", reload=True, app_dir="./",
                 host="127.0.0.1", port=8080)
