@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 import save_docs
 from database import get_categories, get_menu_items, get_category
-from models import Category
+from models import Category, MenuItem
 
 app = FastAPI()
 
@@ -25,7 +25,10 @@ async def get_all_categories_endpoint():
     :return: The categories as a list of Category model objects serialized to JSON.
     """
     categories = get_categories()
-    return [Category(**category) for category in categories]
+    if len(categories) > 0:
+        return [Category(**category) for category in categories]
+    else:
+        return {"message": "no categories found"}
 
 
 @app.get("/category/{id_}")
@@ -38,7 +41,7 @@ async def get_category_endpoint(id_: int = 1):
     :return: category information as a Category model objects serialized to JSON.
     """
     category_data = get_category(id_)
-    return Category(**category_data[0]) if category_data else {"message": "Category not found"}
+    return Category(**category_data[0]) if category_data else {"message": f"Category not found by id={id_}"}
 
 
 @app.get("/menu")
@@ -50,7 +53,10 @@ async def get_menu_endpoint():
     :return: It directly returns the list of menu items as a JSON array.
     """
     items = get_menu_items()
-    return items
+    if len(items) > 0:
+        return [MenuItem(**item) for item in items]
+    else:
+        return {"message": "no categories found"}
 
 
 if __name__ == "__main__":

@@ -43,7 +43,7 @@ def get_menu_items(limit=10):
     try:
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         query = (" SELECT *"
-                 " FROM categories"
+                 " FROM menu"
                  f" WHERE id<={limit}")
         cursor.execute(query)
         items = cursor.fetchall()
