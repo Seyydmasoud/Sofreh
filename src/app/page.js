@@ -35,7 +35,7 @@ export default async function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:block">
           {menu.map((category, index) => (
-            <div key={index}>
+            <div id={category.id} key={index}>
               <div  className="mt-12 flex-1 flex items-end justify-between">
                 <h1 className="text-2xl font-bold text-gray-900">
                   {category.name}

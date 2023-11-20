@@ -11,7 +11,7 @@ export default function Tab({ categories }) {
           {categories.map((tab, index) => (
             <a
               key={tab.name}
-              href={tab.id}
+              href={'#' + tab.id}
               className={classNames(
                 index == 0
                   ? "border-primary text-primary font-bold"
