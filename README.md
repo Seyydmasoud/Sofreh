@@ -7,7 +7,7 @@ A brief description of backend and its purpose.
 
 ## OpenAPI Schema
 
-![OpenAPI Documentation](https://editor.swagger.io/?url=openapi_schema.json)
+[OpenAPI Documentation](https://editor.swagger.io/?url=https://raw.githubusercontent.com/Seyydmasoud/Sofreh/main/openapi_schema.json)
 
 
 This JSON file defines the structure of your API and provides information on endpoints, request/response formats, and more.
