@@ -42,9 +42,9 @@ def get_category(category_id):
 def get_menu_items(limit=10):
     try:
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        query = (" SELECT *"
-                 " FROM menu"
-                 f" WHERE id<={limit}")
+        query = ("SELECT * "
+                 "FROM menu "
+                 f"LIMIT {limit}")
         cursor.execute(query)
         items = cursor.fetchall()
         return items
