@@ -17,6 +17,14 @@ def test_get_categories():
     print("get_categories called:", *categories, sep="\n")
 
 
+def test_get_category(id_):
+    response = requests.get("http://localhost:8080/category/{}".format(id_))
+    assert response.status_code == 200
+    category = response.json()
+    assert category
+    print("test_get_category called:",  category, sep="\n")
+
+
 def test_get_subcategories():
     response = requests.get("http://localhost:8080/subcategories")
     assert response.status_code == 200
@@ -37,5 +45,7 @@ if __name__ == "__main__":
     test_root()
     print("-" * 100)
     test_get_categories()
+    print("-" * 100)
+    test_get_category(1)
     print("-" * 100)
     # test_get_menu()

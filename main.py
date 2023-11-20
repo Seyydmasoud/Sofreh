@@ -1,5 +1,7 @@
 from fastapi import FastAPI
-from database import get_categories, get_menu_items
+
+import save_docs
+from database import get_categories, get_menu_items, get_category
 from models import Category
 
 app = FastAPI()
@@ -14,15 +16,25 @@ async def get_root():
     return {"state": "200 ok"}
 
 
-@app.get("/categories{category_ids}")
-async def get_categories_endpoint(category_ids: list = None):
+@app.get("/categories")
+async def get_all_categories_endpoint():
     """
-    This fetches all category data from the database or specific categories by a list of IDs.
-    :param category_ids: List of category IDs to filter the results.
+    This fetches all category data from the database  .
     :return: The categories as a list of Category model objects serialized to JSON.
     """
-    categories = get_categories(category_ids)
+    categories = get_categories()
     return [Category(**category) for category in categories]
+
+
+@app.get("/category/{id_}")
+async def get_category_endpoint(id_: int):
+    """
+    This fetch category data from the database by id .
+    :param: id_: The id of the category ,
+    :return: category information as a Category model objects serialized to JSON.
+    """
+    category_data = get_category(id_)
+    return Category(**category_data[0]) if category_data else {"message": "Category not found"}
 
 
 @app.get("/menu")
@@ -39,5 +51,6 @@ async def get_menu_endpoint():
 if __name__ == "__main__":
     import uvicorn
 
+    save_docs.save()
     uvicorn.run("main:app", reload=True, app_dir="./",
                 host="127.0.0.1", port=8080)

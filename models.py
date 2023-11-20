@@ -8,14 +8,6 @@ class Category(BaseModel):
     image_url: str
 
 
-class Subcategory(BaseModel):
-    id: int
-    name: str
-    description: str
-    image_url: str
-    parent_id: int
-
-
 class Menu(BaseModel):
     id: int
     name: str
