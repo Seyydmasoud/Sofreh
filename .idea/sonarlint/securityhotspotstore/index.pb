@@ -91,3 +91,15 @@ C
 test_main.http,c\b\cbdc4133ce020dc49f7a0e5509c9dff899a94f38
 @
 requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768
+w
+G.idea/sonarlint/issuestore/9/6/965ffa04b84b6e1df69c3714c70b9d20f5c7564c,4\5\4503f554804501fc9913d0bdd70c99f05e70513d
+w
+G.idea/sonarlint/issuestore/c/b/cbdc4133ce020dc49f7a0e5509c9dff899a94f38,b\d\bd8715a4526ffe1e7554347ea90204443aa185c9
+Å
+Q.idea/sonarlint/securityhotspotstore/1/9/19359a61ae2446b51b549167b014da2fcf265768,e\2\e2212f35b63a1f1addcdc9ab55a8fc987a93a069
+Å
+Q.idea/sonarlint/securityhotspotstore/c/b/cbdc4133ce020dc49f7a0e5509c9dff899a94f38,8\3\83a20e06914dffcbe5c2eb643384af654d3a777d
+Å
+Q.idea/sonarlint/securityhotspotstore/9/6/965ffa04b84b6e1df69c3714c70b9d20f5c7564c,0\c\0c54eda4f4f310af8c3c767159449de6147cb59c
+w
+G.idea/sonarlint/issuestore/1/9/19359a61ae2446b51b549167b014da2fcf265768,b\f\bf26e38c6077dc99b98bdb7696e470de283480be

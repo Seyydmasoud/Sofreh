@@ -14,14 +14,14 @@ async def get_root():
     return {"state": "200 ok"}
 
 
-@app.get("/categories")
-async def get_categories_endpoint():
+@app.get("/categories{category_ids}")
+async def get_categories_endpoint(category_ids: list = None):
     """
-    This fetches all category data from the database.
-    This allows the frontend to easily display the list of all available main categories to the user.
-    :return: the categories as a list of Category model objects serialized to JSON.
+    This fetches all category data from the database or specific categories by a list of IDs.
+    :param category_ids: List of category IDs to filter the results.
+    :return: The categories as a list of Category model objects serialized to JSON.
     """
-    categories = get_categories()
+    categories = get_categories(category_ids)
     return [Category(**category) for category in categories]
 
 

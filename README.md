@@ -1,4 +1,3 @@
- 
 # Sofreh
 
 ## Overview
@@ -10,16 +9,14 @@ A brief description of backend and its purpose.
 [OpenAPI Documentation](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Seyydmasoud/Sofreh/Backend/openapi_schema.json)
 
 
-This JSON file defines the structure of your API and provides information on endpoints, request/response formats, and more.
+This JSON file defines the structure of your API and provides information on endpoints, request/response formats, and
+more.
 
- 
 ## Database Structure
 
 ![Database Diagram](Diagram.png)
 
 Include a visual representation of your database structure using a diagram.
-
- 
 
 ## Usage
 

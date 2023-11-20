@@ -11,12 +11,13 @@ conn = psycopg2.connect(
 )
 
 
-def get_categories():
+def get_categories(categories_ids):
     try:
+        categories_ids = list(categories_ids)
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         query = (" SELECT *"
                  " FROM categories"
-                 " WHERE id<=10")
+                 f" WHERE id<=10 and id in {categories_ids}")
         cursor.execute(query)
         categories = cursor.fetchall()
         return categories
