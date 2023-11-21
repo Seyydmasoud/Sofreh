@@ -64,4 +64,4 @@ if __name__ == "__main__":
 
     save_docs.save()
     uvicorn.run("main:app", reload=True, app_dir="./",
-                host="127.0.0.1", port=8080)
+                host="0.0.0.0", port=8080)
