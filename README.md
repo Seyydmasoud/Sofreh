@@ -23,42 +23,38 @@ Include a visual representation of your database structure using a diagram.
 
 Ensure you have Python installed on your system. Then, follow these steps to set up your project:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Seyydmasoud/Sofreh.git
-    cd Sofreh
-    ```
-
-2. Create a virtual environment:
-    ```bash
-    python -m venv venv
-    ```
-  * #### Activate the virtual environment:
-    
-  1. On Windows:
-     ```bash 
-     venv\Scripts\activate
-     ```
-   
-  2. On macOS/Linux:
-     ```bash 
-     source venv/bin/activate
-     ```
-3. Install project dependencies:
-
-```bash 
-pip install -r requirements.txt
-``` 
+### 1. Clone the repository:
+   ```bash
+   git clone https://github.com/Seyydmasoud/Sofreh.git
+   cd Sofreh
+   ``` 
+### 2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   ```
+### 3. Activate the virtual environment:
+   -  On Windows:
+      ```bash 
+      venv\Scripts\activate
+      ``` 
+   - On macOS/Linux:
+      ```bash 
+      source venv/bin/activate
+      ``` 
+     
+### 4. Install project dependencies:
+   ```bash 
+   pip install -r requirements.txt
+   ``` 
 
 ## Usage and run
 
 Run the project using the following command:
+   ```bash 
+   python main.py
+   ``` 
 
-```bash 
-python main.py
-```
-
-This will start backend application on this [ Link](0.0.0.0:8080).
+This will start backend application on this url :[ http://0.0.0.0:8080]( http://0.0.0.0:8080).
 
 [//]: # (## Contributing)
 
