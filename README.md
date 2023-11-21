@@ -58,8 +58,7 @@ Run the project using the following command:
 python main.py
 ```
 
-This will start your backend application. Make sure to adjust the command if your main Python script has a different
-name.
+This will start backend application on this [ Link](0.0.0.0:8080).
 
 [//]: # (## Contributing)
 
