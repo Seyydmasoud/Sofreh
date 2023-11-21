@@ -10,8 +10,8 @@ A brief description of backend and its purpose.
 
 This JSON file defines the structure of your API and provides information on endpoints, request/response formats, and
 more.(click the
-link[(https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Seyydmasoud/Sofreh/Backend/openapi_schema.json)
-] for more)
+[link](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Seyydmasoud/Sofreh/Backend/openapi_schema.json)
+for more)
 
 ## Database Structure
 
@@ -33,17 +33,17 @@ Ensure you have Python installed on your system. Then, follow these steps to set
     ```bash
     python -m venv venv
     ```
-    * #### Activate the virtual environment:
+  * #### Activate the virtual environment:
     
-      1. On Windows:
-         ```bash 
-         venv\Scripts\activate
-         ```
+  1. On Windows:
+     ```bash 
+     venv\Scripts\activate
+     ```
    
-      2. On macOS/Linux:
-         ```bash 
-         source venv/bin/activate
-         ```
+  2. On macOS/Linux:
+     ```bash 
+     source venv/bin/activate
+     ```
 3. Install project dependencies:
 
 ```bash 
