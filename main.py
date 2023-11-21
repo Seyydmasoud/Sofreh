@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 
 import save_docs
 from database import get_categories, get_menu_items, get_category
@@ -18,7 +18,7 @@ async def get_root():
 
 
 @app.get("/categories")
-@app.get("/c")
+@app.get("/C")
 async def get_all_categories_endpoint():
     """
     This fetches all category data from the database  .
@@ -31,32 +31,37 @@ async def get_all_categories_endpoint():
         return {"message": "no categories found"}
 
 
-@app.get("/category/{id_}")
+@app.get("/category/{cid}")
 @app.get("/category")
-@app.get("/c/{id_}")
-async def get_category_endpoint(id_: int = 1):
+@app.get("/c/{cid}")
+async def get_category_endpoint(cid: int = 1):
     """
     This fetch category data from the database by id .
-    :param: id_: The id of the category .the default is 1 (even if not specified)
+    :param cid: The id of the category .the default is 1 (even if not specified)
     :return: category information as a Category model objects serialized to JSON.
     """
-    category_data = get_category(id_)
-    return Category(**category_data[0]) if category_data else {"message": f"Category not found by id={id_}"}
+    print(cid)
+    category_data = get_category(cid)
+    return Category(**category_data[0]) if category_data else {"message": f"Category not found by id={cid}"}
 
 
 @app.get("/menu")
 @app.get("/m")
-async def get_menu_endpoint():
+async def get_menu_endpoint(limit: int = Query(default=10, le=100)):
     """
-    This endpoint fetches all menu item data from the database.
-    This allows the frontend to display the list of all available menu items to build out the menu display for users.
-    :return: It directly returns the list of menu items as a JSON array.
+    This endpoint fetches a list of menu items from the database.
+
+    This allows the frontend to display a list of menu items, and the `limit` query parameter
+    can be used to control the number of items returned in the response.
+
+    :param limit: The maximum number of items to return (default is 10, maximum is 100).
+    :return: A JSON array containing menu items.
     """
-    items = get_menu_items()
+    items = get_menu_items(limit=limit)
     if len(items) > 0:
         return [MenuItem(**item) for item in items]
     else:
-        return {"message": "no categories found"}
+        return {"message": "no MenuItem found"}
 
 
 if __name__ == "__main__":

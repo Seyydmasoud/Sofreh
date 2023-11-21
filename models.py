@@ -8,12 +8,13 @@ class Category(BaseModel):
     image_url: str
 
 
-class Menu(BaseModel):
+class MenuItem(BaseModel):
     id: int
     name: str
     description: str
-    price: int
+    price: float
     discount: float
+    final_price: float
     category_id: int
 
 
@@ -49,10 +50,3 @@ class OrderDetail(BaseModel):
     order_id: int
     menu_item_id: int
     quantity: int
-
-
-class MenuItem(BaseModel):
-    id: int
-    name: str
-    price: float
-    category_id: int
