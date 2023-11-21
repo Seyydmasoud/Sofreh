@@ -6,7 +6,7 @@ conn = psycopg2.connect(
     database="sofrehdb",
     user="postgres",
     password="password",
-    host='postgresql',
+    host='postgresql',  ##todo change to localhost
     port='5432'
 )
 
