@@ -1,0 +1,46 @@
+version: '3.5'
+
+services:
+  postgresql:
+    container_name: postgres
+    image: docker.arvancloud.ir/postgres:16.1
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=sofrehdb
+    ports:
+      - "127.0.0.1:5432:5432"
+    restart: always
+    networks:
+      - sofreh
+
+  pgadmin:
+    container_name: pgadmin
+    image: docker.arvancloud.ir/dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=a@a.com
+      - PGADMIN_DEFAULT_PASSWORD=changeme
+    ports:
+      - "8081:80"
+    restart: always
+    networks:
+      - sofreh
+
+  backend:
+    container_name: backend
+    image: ghcr.io/seyyedmasoud/sofreh-backend:v1.0
+    ports:
+      - "8080:8080"
+    networks:
+      - sofreh
+    volumes:
+      - "./backend-code:/app"
+    restart: always
+
+  frontend:
+    container_name: frontend
+    image: masoti/sofreh-backend:v1.0
+
+
+networks:
+  sofreh:
+    driver: bridge
